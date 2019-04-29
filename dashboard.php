@@ -1,21 +1,7 @@
 <?php include_once('include/header.php');
  include_once('include/database.php');
  
- $query1="Select * from incident_records where status='Pending'   ";
-$res1=mysqli_query($link,$query1);
-$num1=mysqli_num_rows($res1);
-
-
- $query2="Select * from incident_records where status='Processing'   ";
-$res2=mysqli_query($link,$query2);
-$num2=mysqli_num_rows($res2);
-
-$query3="Select * from incident_records where status='Closed'   ";
-$res3=mysqli_query($link,$query3);
-$num3=mysqli_num_rows($res3);
- 
- 
- $query="Select * from incident_records ORDER BY id DESC   ";
+t_records ORDER BY id DESC   ";
 $res=mysqli_query($link,$query);
 $num=mysqli_num_rows($res);
 if($num>0)
@@ -159,16 +145,6 @@ while($row_data= mysqli_fetch_array($res))
   <!-- container section start -->
 
   <!-- javascripts -->
-  <script src="js/jquery.js"></script>
-  <script src="js/jquery-ui-1.10.4.min.js"></script>
-  <script src="js/jquery-1.8.3.min.js"></script>
-  <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
-  <!-- bootstrap -->
-  <script src="js/bootstrap.min.js"></script>
-  <!-- nice scroll -->
-  <script src="js/jquery.scrollTo.min.js"></script>
-  <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-  <!-- charts scripts -->
   <script src="assets/jquery-knob/js/jquery.knob.js"></script>
   <script src="js/jquery.sparkline.js" type="text/javascript"></script>
   <script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
