@@ -9,47 +9,7 @@
 	z-index: 9999;
 }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
-    width: 300px;
-    background-color: black;
-    color: #fff;
-    text-align: left;
-    border-radius: 6px;
-    padding: 5px 0;
-opacity:1 !important;
-margin-left: -420px;
-  
-    position: absolute;
-    z-index: 999;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
-
-.black_overlay {
-  display: none;
-  position: absolute;
-  top:0%;
-  left:0%;
-  width:500px;
- height:400px
-  background-color: black;
-  z-index:1001;
-  -moz-opacity:0.8;
-  opacity:.80;
-  filter: alpha(opacity=80);
-}
-.white_content {
-  display: none;
-  position: absolute;
-  top:25%;
-  left:35%;
-  width:500px;
-  height:500px;
-  padding:16px;
-  border:5px solid rgb(83, 163, 163);
+, 163, 163);
   border-radius:5px;
   color:#000;
   background-color: white;
@@ -77,26 +37,6 @@ $code= "MIET";
 	$incident_created_by = trim($_POST['incident_created_by']);
 	$title = trim($_POST['title']);
 		 
-		  $designation =trim($_POST['designation']);
-		 $email =trim($_POST['email']);
-		 $phone =trim($_POST['phone']);
-		// $priority =trim($_POST['priority']);
-		 $status =trim($_POST['status']);
-		 $location =trim($_POST['location']);
-		 $category =trim($_POST['category']);
-		 $description =trim($_POST['description']);
-		 $userid =trim($_POST['userid']);
-		 
-		 if($designation=='Director, MIET' || $designation=='Director, Academics'|| $designation=='Senior Manager Strategic')
-		 {
-		 $priority="High"; }
-		 elseif($designation=='Assistant Professor,CSE Engineer' ||$designation=='Manager-Student Expeience' || $designation=='HOD,IT & CSE' || $designation=='HOD,ECE'){
-			 
-			 $priority="Medium";
-		 }
-		 else{
-			 $priority="Low";
-		 }
 		
 		 $image=$_REQUEST['image'];
 	  
@@ -428,22 +368,7 @@ echo "</select>"; ?>
 
       //custom select box
 
-      $(function() {
-        $('select.styled').customSelect();
-      });
-
-      /* ---------- Map ---------- */
-      $(function() {
-        $('#map').vectorMap({
-          map: 'world_mill_en',
-          series: {
-            regions: [{
-              values: gdpData,
-              scale: ['#000', '#000'],
-              normalizeFunction: 'polynomial'
-            }]
-          },
-          backgroundColor: '#eef3f7',
+     
           onLabelShow: function(e, el, code) {
             el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
           }
